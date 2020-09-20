@@ -1,0 +1,82 @@
+body{
+	font-family:'Arial',"Microsoft YaHei", sans-serif;
+	position:relative;
+	font-size: 14px;
+    color: #333;
+	background: #efefef;
+}
+.grid {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+[class*="col_"] {
+    padding: 10px;
+}
+#eth_info img{
+	vertical-align:middle;	
+}
+.address a{
+	margin-left: 10px;
+}
+hr{
+	margin:5px 0;
+}
+.address_left{
+	float: left;
+	width:470px;
+}
+.eth_address {
+    float: left;
+    width: 380px;
+    height: 40px;
+    padding-top: 12px;
+}
+.balance{
+	float:left;
+}
+img.clipboard{
+	max-width:20px;
+}
+.token_amount{
+	display: inline-block;
+    width: 200px;
+	padding-left:25px;
+}
+i.key {
+    width: 120px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    padding: 12px;
+    margin-right: 10px;
+    text-overflow: ellipsis;
+}
+#hide0{
+	margin-left:20px;
+}
+button.clipboard {
+    margin-right: 10px;
+}
+#total_info {
+    line-height: 80px;
+    font-size: 16px;
+    font-weight: bold;
+}
+#total,#total_eth{
+	color:blue;
+}
+#vi_tong{
+	height: 40px;
+}
+#contract_txt{
+	width:40%;margin-left: 20px;
+}
+#vi_tong_txt{
+	width: 40%;
+    margin-right: 15px;
+}
+#gomToken{
+	margin-left: 35px;
+    margin-right: 50px;
+}
