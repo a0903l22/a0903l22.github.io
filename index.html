@@ -55,9 +55,7 @@ Chúc chị luôn vui vẻ! 😊</textarea>
 		
 		$("#template").on("input",function(){
 			template = $("#template").val();
-			var tenkhach = $(this).val();
-			var result = template.replaceAll('Linh', tenkhach);
-			$("#result").html(result);
+			$("#ten_khach").trigger("input");
 		});
 		new ClipboardJS('.clipboard');
 	});
