@@ -56,8 +56,8 @@ Chúc chị luôn vui vẻ! 😊</textarea>
 		
 		$("#hang_mua").on("input",function(){
 			var hangmua = $(this).val();
-			var result = template.replaceAll('10 mặt nạ nhau thai cừu', hangmua);
-			$("#result").html(result);
+			var template = template.replaceAll('10 mặt nạ nhau thai cừu', hangmua);
+			$("#ten_khach").trigger("input");
 		});
 		
 		$("#template").on("input",function(){
