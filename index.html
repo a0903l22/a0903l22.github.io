@@ -15,8 +15,9 @@
 			Xưng hô:
 			<label><input type="radio" id="female" name="gender" value="male" checked>Chị</label>
 			<label><input type="radio" id="male" name="gender" value="male">Anh</label>
-			<br/>Tên khách:
-			<input type="text" id="ten_khach" value="" placeholder="">
+			<br/><label>Tên khách:
+			<input type="text" id="ten_khach" value="" placeholder=""></label><label> Hàng mua:
+			<input type="text" id="hang_mua" value="" placeholder=""></label>
 		</div>
 		<div><button class="clipboard" data-clipboard-target="#result" style="width:100%">copy kết quả</button></div>
 		<pre id="result">
@@ -50,6 +51,12 @@ Chúc chị luôn vui vẻ! 😊</textarea>
 		$("#ten_khach").on("input",function(){
 			var tenkhach = $(this).val();
 			var result = template.replaceAll('Linh', tenkhach);
+			$("#result").html(result);
+		});
+		
+		$("#hang_mua").on("input",function(){
+			var hangmua = $(this).val();
+			var result = template.replaceAll('10 mặt nạ nhau thai cừu', hangmua);
 			$("#result").html(result);
 		});
 		
