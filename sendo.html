@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>SMS PRO</title>
+  <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" href="fav.png" type="image/png" />
+</head>
+<body>
+<div class="grid">
+	<div class="tab-content">
+		<div id="total_info">
+			Xưng hô:
+			<label><input type="radio" id="female" name="gender" value="male" checked>Chị</label>
+			<label><input type="radio" id="male" name="gender" value="male">Anh</label>
+			<br/><label>Tên khách:
+			<input type="text" id="ten_khach" value="" placeholder=""></label><label> Hàng mua:
+			<input type="text" id="hang_mua" value="" placeholder=""></label>
+		</div>
+		<div><button class="clipboard" data-clipboard-target="#result" style="width:100%">copy kết quả</button></div>
+		<pre id="result">
+		</pre>
+		<p><b>Template (tên Linh)</b></p>
+		<textarea id="template" style="width:100%">Chị Linh ơi 🌸! Mai Phương cảm ơn chị Linh đã đặt hàng trên shop Mai Phương ạ!🌼
+
+
+
+
+Phương tặng chị Linh 01 serum nhau thai cừu cao cấp và 01 tuýp sữa dưỡng ẩm cao cấp phương gửi cùng đơn hàng ạ ! ☺️ 🌸🌱</textarea>
+	</div>
+</div>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/kickstart.js"></script>
+<script src="clipboard.min.js"></script>
+<script src="ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var template = $("#template").val();
+		$("#result").html(template);
+		$("#male,#female").on("change",function(){
+			if($("#male").prop("checked")){
+				template = template.replaceAll('chị', 'anh');
+				template = template.replaceAll('Chị', 'Anh');
+				$("#ten_khach").trigger("input");
+			}else{
+				template = template.replaceAll('anh', 'chị');
+				template = template.replaceAll('Anh', 'Chị');
+				$("#ten_khach").trigger("input");
+			}
+		});
+		$("#ten_khach").on("input",function(){
+			var tenkhach = $(this).val();
+			var result = template.replaceAll('Linh', tenkhach);
+			$("#result").html(result);
+		});
+		
+		$("#hang_mua").on("input",function(){
+			var hangmua = $(this).val();
+			var template = template.replaceAll('10 mặt nạ nhau thai cừu', hangmua);
+			$("#ten_khach").trigger("input");
+		});
+		
+		$("#template").on("input",function(){
+			template = $("#template").val();
+			$("#ten_khach").trigger("input");
+		});
+		new ClipboardJS('.clipboard');
+	});
+</script>
+</body>
+</html>
